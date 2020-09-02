@@ -11,11 +11,24 @@ int main()
 	scanf("%[^\n]", arr);
 	a = _getch();
 	printf("%c\n", a);
+	if (!(a >= 'a' && a <= 'z' || a >= 'A' && a <= 'Z'))
+	{
+		printf("error");
+		return 0;
+	}
 	while (arr[i] != '\0')
 	{
-		if (arr[i] == a)
+		if (arr[i] >= 'a' && arr[i] <= 'z' || arr[i] >= 'A' && arr[i] <= 'Z')
 		{
-			j++;
+			if (arr[i] == a || arr[i] == a + 32 || arr[i] == a - 32)
+			{
+				j++;
+			}
+		}
+		else
+		{
+			printf("error");
+			return 0;
 		}
 		i++;
 	}
